@@ -5,6 +5,7 @@ const Form = () => {
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("");
+  
 
   const handleOnChangeDate = (e) => setDate(e.target.value);
   const handleOnChangeAmount = (e) => setAmount(e.target.value);
@@ -43,21 +44,24 @@ const Form = () => {
           placeholder="Enter description"
           value={description}
           onChange={handleOnChangeDescription}
+          required
         />
         <input
           type="text"
           placeholder="Enter category"
           value={category}
           onChange={handleOnChangeCategory}
+          required
         />
         <input
           type="number "
           placeholder="Enter amount"
           value={amount}
           onChange={handleOnChangeAmount}
+          required
         />
         <input type="date" value={date} onChange={handleOnChangeDate} />
-        <input type="submit" />
+        <input type="submit" onSubmit={handleSubmit} />
       </form>
     </div>
   );

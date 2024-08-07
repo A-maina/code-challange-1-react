@@ -1,14 +1,14 @@
 import React from "react";
 
-const Singltransaction = ({ transaction }) => {
+const Singletransaction = ({ transaction }) => {
   return (
     <div>
       <table>
         <thead>
           <tr>
             <th>Date</th>
-            <th >Description</th>
-            <th >Category</th>
+            <th>Description</th>
+            <th>Category</th>
             <th>Amount</th>
           </tr>
         </thead>
@@ -27,4 +27,4 @@ const Singltransaction = ({ transaction }) => {
   );
 };
 
-export default Singltransaction;
+export default Singletransaction;
