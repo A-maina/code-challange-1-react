@@ -7,8 +7,8 @@ const Singltransaction = ({ transaction }) => {
         <thead>
           <tr>
             <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
+            <th >Description</th>
+            <th >Category</th>
             <th>Amount</th>
           </tr>
         </thead>
@@ -18,7 +18,7 @@ const Singltransaction = ({ transaction }) => {
 
             <td>{transaction.description}</td>
             <td>{transaction.category}</td>
-            
+
             <td>{transaction.amount}</td>
           </tr>
         </tbody>
