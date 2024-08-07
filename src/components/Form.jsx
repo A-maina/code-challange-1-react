@@ -1,39 +1,39 @@
 import React, { useState } from "react";
 
-const Form = () => {
-  const [date, setDate] = useState("");
-  const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState("");
-  
+const Form = ({ transactions, setTransaction }) => {
+  const [AddData, setAddData] = useState({
+    description: "",
+    category: "",
+    amount: "",
+    date: "",
+  });
 
-  const handleOnChangeDate = (e) => setDate(e.target.value);
-  const handleOnChangeAmount = (e) => setAmount(e.target.value);
-  const handleOnChangeDescription = (e) => setDescription(e.target.value);
-  const handleOnChangeCategory = (e) => setCategory(e.target.value);
-
+  const handleOnChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setAddData({
+      ...AddData,
+      [name]: value,
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    const transactionData = {
-      date: date,
-      description: description,
-      category: category,
-      amount: amount,
-    };
     fetch("http://localhost:3000/transactions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(transactionData),
+      body: JSON.stringify(AddData),
     })
       .then((res) => res.json())
-      .then((data) => data("posted"));
-    setDate("");
-    setDescription("");
-    setCategory("");
-    setAmount("");
+      .then((transaction) => setTransaction([transaction, ...transactions]));
+    setAddData({
+      description: "",
+      category: "",
+      amount: "",
+      date: "",
+    });
   };
 
   return (
@@ -42,26 +42,35 @@ const Form = () => {
         <input
           type="text"
           placeholder="Enter description"
-          value={description}
-          onChange={handleOnChangeDescription}
+          name="description"
+          value={AddData.description}
+          onChange={handleOnChange}
           required
         />
         <input
           type="text"
           placeholder="Enter category"
-          value={category}
-          onChange={handleOnChangeCategory}
+          name="category"
+          value={AddData.category}
+          onChange={handleOnChange}
           required
         />
         <input
           type="number "
           placeholder="Enter amount"
-          value={amount}
-          onChange={handleOnChangeAmount}
+          name="amount"
+          value={AddData.amount}
+          onChange={handleOnChange}
           required
         />
-        <input type="date" value={date} onChange={handleOnChangeDate} />
-        <input type="submit" onSubmit={handleSubmit} />
+          <input
+            type="date"
+            name="date"
+            value={AddData.date}
+            onChange={handleOnChange}
+            required
+          />
+        <input type="submit" />
       </form>
     </div>
   );
