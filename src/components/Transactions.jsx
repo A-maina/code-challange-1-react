@@ -8,8 +8,8 @@ useEffect(() => {
       .then((res) => res.json())
       .then((transactions) => setTransaction(transactions))
   }, []);
-  const displaytransactions = transactions.map((transaction)=>(
-    <Singltransaction  transaction={transaction}/>
+  const displaytransactions = transactions.map((transaction )=>(
+    <Singltransaction  transaction={transaction} key={transaction.id}/>
   )
 
   )
