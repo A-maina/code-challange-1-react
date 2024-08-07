@@ -3,23 +3,31 @@ import React from "react";
 const Singletransaction = ({ transaction }) => {
   return (
     <div>
-      <table>
+      <table className="w-full">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Amount</th>
+            <th className="border px-4 py-2    bg-black">Date</th>
+            <th className="border px-4 py-2  bg-black">Description</th>
+            <th className="border px-4 py-2  bg-black">Category</th>
+            <th className="border px-4 py-2  bg-black">Amount</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td> {transaction.date} </td>
+            <td className="border px-4 py-2 bg-purple-900">
+              {transaction.date}
+            </td>
 
-            <td>{transaction.description}</td>
-            <td>{transaction.category}</td>
+            <td className="border px-4 py-2  bg-purple-900">
+              {transaction.description}
+            </td>
+            <td className="border px-4 py-2  bg-purple-900">
+              {transaction.category}
+            </td>
 
-            <td>{transaction.amount}</td>
+            <td className="border px-4 py-2  bg-purple-900">
+              {transaction.amount}
+            </td>
           </tr>
         </tbody>
       </table>

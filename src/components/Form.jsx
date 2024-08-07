@@ -18,7 +18,7 @@ const Form = ({ transactions, setTransaction }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://react-backend-henna.vercel.app/transactions", {
+    fetch("http://localhost:3000/transactions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,40 +37,62 @@ const Form = ({ transactions, setTransaction }) => {
   };
 
   return (
-    <div>
+    <div className="max-w-md mx-auto mt-8 p-4 bg-white shadow rounded">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter description"
-          name="description"
-          value={AddData.description}
-          onChange={handleOnChange}
-          required
-        />
-        <input
-          type="text"
-          placeholder="Enter category"
-          name="category"
-          value={AddData.category}
-          onChange={handleOnChange}
-          required
-        />
-        <input
-          type="number "
-          placeholder="Enter amount"
-          name="amount"
-          value={AddData.amount}
-          onChange={handleOnChange}
-          required
-        />
+        <div>
+          <label className="block text-purple-500">Description</label>
+          <input
+            type="text"
+            placeholder="Enter description"
+            name="description"
+            value={AddData.description}
+            onChange={handleOnChange}
+            required
+            className=" p-2"
+          />
+        </div>
+        <div>
+          <label className="block text-purple-500">Category</label>
+          <input
+            type="text"
+            placeholder="Enter category"
+            name="category"
+            value={AddData.category}
+            onChange={handleOnChange}
+            required
+            className=" p-2"
+          />
+        </div>
+        <div>
+          <label className="block text-purple-500">Amount</label>
+          <input
+            type="number "
+            placeholder="Enter amount"
+            name="amount"
+            value={AddData.amount}
+            onChange={handleOnChange}
+            required
+            className=" p-2"
+          />
+        </div>
+        <div>
+          <label className="block text-purple-500">Date</label>
           <input
             type="date"
             name="date"
             value={AddData.date}
             onChange={handleOnChange}
             required
+            className=" p-2"
           />
-        <input type="submit" />
+        </div>
+        <button
+          className=" p-2 bg-purple-500  rounded hover:bg-purple-900"
+          type="submit"
+        >
+          {" "}
+          Submit{" "}
+        </button>
       </form>
     </div>
   );
