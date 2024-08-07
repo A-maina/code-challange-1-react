@@ -83,7 +83,34 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "id": "22c9",
+      "description": "Allam",
+      "category": "Student",
+      "amount": "12000",
+      "date": "7777-07-07"
+    },
+    {
+      "id": "f6cf",
+      "description": "Gift",
+      "category": "Student",
+      "amount": "12000",
+      "date": "0001-11-11"
+    },
+    {
+      "id": "969d",
+      "description": "Gift",
+      "category": "Student",
+      "amount": "12000",
+      "date": "33333-03-31"
+    },
+    {
+      "id": "f349",
+      "description": "jsk",
+      "category": "Student",
+      "amount": "12000",
+      "date": "4444-04-04"
     }
-   
   ]
 }
