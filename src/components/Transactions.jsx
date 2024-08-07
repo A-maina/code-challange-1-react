@@ -5,7 +5,7 @@ function Transactions() {
   const [transactions, setTransaction] = useState([]);
   const [search, setSearch] = useState("");
   useEffect(() => {
-    fetch("http://localhost:3000/transactions")
+    fetch("https://react-backend-t7bo.vercel.app/")
       .then((res) => res.json())
       .then((transactions) => setTransaction(transactions));
   }, []);
