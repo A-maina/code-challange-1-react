@@ -18,7 +18,7 @@ const Form = ({ transactions, setTransaction }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://react-backend-t7bo.vercel.app/", {
+    fetch("https://react-backend-henna.vercel.app/transactions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
