@@ -37,20 +37,28 @@ const Form = () => {
 
   return (
     <div>
-      <form action="">
-<input type="text" placeholder='Enter description'/>
-<input type="text" placeholder='Enter category'/>
-<input type="number " placeholder='Enter amount' />
-<input type="date"/>
-<input type="submit" />
-
-
-
-
-
-</form>
-
-
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter description"
+          value={description}
+          onChange={handleOnChangeDescription}
+        />
+        <input
+          type="text"
+          placeholder="Enter category"
+          value={category}
+          onChange={handleOnChangeCategory}
+        />
+        <input
+          type="number "
+          placeholder="Enter amount"
+          value={amount}
+          onChange={handleOnChangeAmount}
+        />
+        <input type="date" value={date} onChange={handleOnChangeDate} />
+        <input type="submit" />
+      </form>
     </div>
   );
 };
