@@ -23,7 +23,11 @@ function Transactions() {
     <div>
       <Form transactions={transactions} setTransaction={setTransaction} />
       <form onChange={(e) => setSearch(e.target.value)}>
-        <input type="text" placeholder=" search" />
+        <div>
+        <label className="block text-purple-500 text-2xl font-bold text-purple-700 mt-4 mb-2">Search</label>
+
+          <input className=" p-2 bg-black " type="text" placeholder=" search" />
+        </div>
       </form>
 
       <div>{displaytransactions}</div>

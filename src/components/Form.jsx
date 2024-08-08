@@ -37,13 +37,16 @@ const Form = ({ transactions, setTransaction }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-4 bg-white shadow rounded">
+    <div className="max-w-md mx-auto mt-8 p-4 bg-black shadow rounded">
+      <h1 className="text-4xl font-bold text-purple-700 mt-4 mb-2">
+        Bank of Flatiron
+      </h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label className="block text-purple-500">Description</label>
           <input
             type="text"
-            placeholder="Enter description"
+            placeholder ="Enter description"
             name="description"
             value={AddData.description}
             onChange={handleOnChange}
@@ -52,7 +55,7 @@ const Form = ({ transactions, setTransaction }) => {
           />
         </div>
         <div>
-          <label className="block text-purple-500">Category</label>
+        <label className="block text-purple-500">Category</label>
           <input
             type="text"
             placeholder="Enter category"
@@ -90,8 +93,7 @@ const Form = ({ transactions, setTransaction }) => {
           className=" p-2 bg-purple-500  rounded hover:bg-purple-900"
           type="submit"
         >
-          {" "}
-          Submit{" "}
+          submit
         </button>
       </form>
     </div>
